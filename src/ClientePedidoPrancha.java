@@ -35,7 +35,7 @@ public class ClientePedidoPrancha extends Cliente{
                 return (float) 2.6;
             }else if (OpcaoNivelSurf == 6) {
                 return (float) 2.9;
-            }break;
+            }
         }
 
         System.out.println("Opcao invalida, favor selecionar novamente!");
