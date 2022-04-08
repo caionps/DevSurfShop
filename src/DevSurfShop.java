@@ -21,6 +21,7 @@ public class DevSurfShop {
             // Colocar o método do estoque aqui para avisar da BAIXA
 
                 while (opcao2 != 5) {
+
                     System.out.println("Olá! Selecione a opcao que deseja:");
                     System.out.println("1 - Fazer pedido ao Fornecedor de Produtos para a Fábrica\n" +
                             "2 - Fazer pedido ao Fornecedor de Vestuario\n"
@@ -29,11 +30,13 @@ public class DevSurfShop {
 
                     if (opcao2 == 1) {
 
-                        System.out.println("Digite o Nome do produto que você quer adicionar");
+                        EstoqueFabrica estoqueFabrica = new EstoqueFabrica();
+                        estoqueFabrica.CompraFornecedor();
 
                     }else if (opcao2 == 2) {
 
-                        System.out.println("Digite o Nome do produto que você quer adicionar");
+                        EstoqueVestuario estoqueVestuario = new EstoqueVestuario();
+                        estoqueVestuario.CompraFornecedor();
 
                     }else
                         System.out.println("Opcao Invalida, escolha novamente!\n\n");
