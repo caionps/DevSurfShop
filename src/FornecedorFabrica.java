@@ -1,98 +1,43 @@
-public class FornecedorFabrica extends Fornecedor{
+import java.util.ArrayList;
+import java.util.Scanner;
 
-    private int BlocoEPS;
-    private int BlocoPoliuretano;
-    private int FibraDeVidro;
-    private int ResinaEpoxy;
-    private int ResinaPoliester;
-    private int CopinhoQuilha;
-    private int CopinhoLeash;
+public class FornecedorFabrica implements Fornecedor {
 
-    public int getBlocoEPS() {
-        return BlocoEPS;
-    }
+    private int EncomendaBloco;
+    private int EncomendaResina;
+    private int EncomendaCopinho;
+    private int EncomendaRoloFibraVidro;
+    private int opcao;
 
-    public void setBlocoEPS(int blocoEPS) {
-        BlocoEPS = blocoEPS;
-    }
+    Scanner prompt = new Scanner(System.in);
 
-    public int getBlocoPoliuretano() {
-        return BlocoPoliuretano;
-    }
+    public void CompraFornecedor() {
+        ArrayList<String> produtosFornecedor = new ArrayList<>();
+        produtosFornecedor.add("1 - Bloco");
+        produtosFornecedor.add("2 - Resina");
+        produtosFornecedor.add("3 - Copinho");
+        produtosFornecedor.add("4 - Rolo de Fibra de vidro");
 
-    public void setBlocoPoliuretano(int blocoPoliuretano) {
-        BlocoPoliuretano = blocoPoliuretano;
-    }
+        System.out.println("Digite o produto que deseja encomendar: ");
+        System.out.println(produtosFornecedor.get(0));
+        System.out.println(produtosFornecedor.get(1));
+        System.out.println(produtosFornecedor.get(2));
+        System.out.println(produtosFornecedor.get(3));
+        opcao = prompt.nextInt();
 
-    public int getFibraDeVidro() {
-        return FibraDeVidro;
-    }
-
-    public void setFibraDeVidro(int fibraDeVidro) {
-        FibraDeVidro = fibraDeVidro;
-    }
-
-    public int getResinaEpoxy() {
-        return ResinaEpoxy;
-    }
-
-    public void setResinaEpoxy(int resinaEpoxy) {
-        ResinaEpoxy = resinaEpoxy;
-    }
-
-    public int getResinaPoliester() {
-        return ResinaPoliester;
-    }
-
-    public void setResinaPoliester(int resinaPoliester) {
-        ResinaPoliester = resinaPoliester;
-    }
-
-    public int getCopinhoQuilha() {
-        return CopinhoQuilha;
-    }
-
-    public void setCopinhoQuilha(int copinhoQuilha) {
-        CopinhoQuilha = copinhoQuilha;
-    }
-
-    public int getCopinhoLeash() {
-        return CopinhoLeash;
-    }
-
-    public void setCopinhoLeash(int copinhoLeash) {
-        CopinhoLeash = copinhoLeash;
-    }
-
-    public FornecedorFabrica(int BlocoEPS, int BlocoPoliuretano, int FibraDeVidro, int ResinaEpoxy, int ResinaPoliester,
-                            int CopinhoQuilha, int CopinhoLeash){
-
-        this.BlocoEPS = BlocoEPS;
-        this.BlocoPoliuretano = BlocoPoliuretano;
-        this.FibraDeVidro = FibraDeVidro;
-        this.ResinaEpoxy = ResinaEpoxy;
-        this.ResinaPoliester = ResinaPoliester;
-        this.CopinhoQuilha = CopinhoQuilha;
-        this.CopinhoLeash = CopinhoLeash;
-
-
-    }
-    public void fazerPedido() {
-        boolean clienteEncomenda = false;
-        if (BlocoEPS < 1 | BlocoPoliuretano < 1 | FibraDeVidro < 1
-                | ResinaEpoxy < 5 | ResinaPoliester < 5 | CopinhoQuilha < 3 | CopinhoLeash < 1) {
-
-            System.out.println("Necessario fazer pedido aos fornecedores.");
-
+        if (opcao == 1) {
+            System.out.println("Digite a quantidade de blocos que deseja encomendar: ");
+            EncomendaBloco = prompt.nextInt();
+        } else if (opcao == 2) {
+            System.out.println("Digite a quantidade de litros de resina que deseja encomendar: ");
+            EncomendaResina = prompt.nextInt();
+        } else if (opcao == 3) {
+            System.out.println("Digite a quantidade de copinhhos que deseja encomendar: ");
+            EncomendaCopinho = prompt.nextInt();
+        } else if (opcao == 4) {
+            System.out.println("Digite a quantidade de rodos de fibra de vidro que deseja encomendar: ");
+        } else {
+            System.out.println("opcao invalida");
         }
-        else if (clienteEncomenda == true) {
-
-            System.out.println("Pedido de prancha feito, encomendar material para produção");
-        }
-        else{
-            System.out.println("Não é necessario fazer pedidos.");}
     }
-
-
-
 }

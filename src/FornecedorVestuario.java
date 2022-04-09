@@ -1,58 +1,41 @@
-public class FornecedorVestuario extends Fornecedor{
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class FornecedorVestuario implements Fornecedor {
 
     private int wetSuit;
     private int sunga;
     private int maio;
     private int bikini;
+    private int opcao;
 
-    public int getWetSuit() {
-        return wetSuit;
-    }
+    Scanner prompt = new Scanner(System.in);
 
-    public void setWetSuit(int wetSuit) {
-        this.wetSuit = wetSuit;
-    }
+    public void CompraFornecedor() {
+        ArrayList<String> produtosFornecedor = new ArrayList<>();
+        produtosFornecedor.add("1 - Bikini");
+        produtosFornecedor.add("2 - Sunga");
+        produtosFornecedor.add("3 - Wetsuit");
+        produtosFornecedor.add("4 - Maio");
 
-    public int getSunga() {
-        return sunga;
-    }
+        System.out.println("Digite o produto que deseja encomendar: ");
+        System.out.println(produtosFornecedor.get(0));
+        System.out.println(produtosFornecedor.get(1));
+        System.out.println(produtosFornecedor.get(2));
+        System.out.println(produtosFornecedor.get(3));
+        opcao = prompt.nextInt();
 
-    public void setSunga(int sunga) {
-        this.sunga = sunga;
-    }
-
-    public int getMaio() {
-        return maio;
-    }
-
-    public void setMaio(int maio) {
-        this.maio = maio;
-    }
-
-    public int getBikini() {
-        return bikini;
-    }
-
-    public void setBikini(int bikini) {
-        this.bikini = bikini;
-    }
-
-    public FornecedorVestuario(int wetSuit, int sunga, int maio, int bikini){
-
-        this.wetSuit = wetSuit;
-        this.sunga = sunga;
-        this.maio = maio;
-        this.bikini = bikini;
-    }
-    public void fazerPedido() {
-        if (wetSuit < 15 | sunga < 15 | maio < 15 | bikini < 15 ) {
-
-            System.out.println("Necessario fazer pedido aos fornecedores.");
-
+        if (opcao == 1) {
+            System.out.println("Digite a quantidade de Bikinis que deseja encomendar: ");
+            prompt.nextInt();
+        } else if (opcao == 2) {
+            System.out.println("Digite a quantidade de Sungas que deseja encomendar: ");
+        } else if (opcao == 3) {
+            System.out.println("Digite a quantidade de Wetsuits que deseja encomendar: ");
+        } else if (opcao == 4) {
+            System.out.println("Digite a quantidade de Maios que deseja encomendar: ");
+        } else {
+            System.out.println("opcao invalida");
         }
-        else{
-            System.out.println("Estoque em condições ideais.");
-        }
-
     }
 }

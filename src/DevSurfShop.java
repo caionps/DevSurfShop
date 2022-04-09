@@ -30,13 +30,13 @@ public class DevSurfShop {
 
                     if (opcao2 == 1) {
 
-                        EstoqueFabrica estoqueFabrica = new EstoqueFabrica();
-                        estoqueFabrica.CompraFornecedor();
+                        FornecedorFabrica fornecedorFabrica = new FornecedorFabrica();
+                        fornecedorFabrica.CompraFornecedor();
 
                     }else if (opcao2 == 2) {
 
-                        EstoqueVestuario estoqueVestuario = new EstoqueVestuario();
-                        estoqueVestuario.CompraFornecedor();
+                        FornecedorFabrica fornecedorFabrica = new FornecedorFabrica();
+                        fornecedorFabrica.CompraFornecedor();
 
                     }else
                         System.out.println("Opcao Invalida, escolha novamente!\n\n");
