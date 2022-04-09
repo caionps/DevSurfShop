@@ -11,6 +11,10 @@ public class FornecedorVestuario implements Fornecedor {
 
     Scanner prompt = new Scanner(System.in);
 
+    public FornecedorVestuario() {
+
+    }
+
     public void CompraFornecedor() {
         ArrayList<String> produtosFornecedor = new ArrayList<>();
         produtosFornecedor.add("1 - Bikini");

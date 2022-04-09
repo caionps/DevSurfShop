@@ -10,11 +10,11 @@ public class DevSurfShop {
         int opcao2 = 0;
         int opcao3 = 0;
 
-        while (opcao1 != 3) {
+        while (opcao1 != 4) {
 
             System.out.println("********** Menu **********");
             System.out.println("Digite a opção que deseja:");
-            System.out.println("1 - Pedido ao Fornecedor\n2 - Pedido Cliente\n3 - Sair");
+            System.out.println("1 - Pedido ao Fornecedor\n2 - Pedido Cliente\n3 - Cadastrar Cliente\n4 - Sair");
             opcao1 = prompt.nextInt();
 
             if (opcao1 == 1) {
@@ -44,18 +44,43 @@ public class DevSurfShop {
 
             }else if (opcao1 == 2){
 
-                ClientePedidoPrancha pedidoPrancha = new ClientePedidoPrancha();
-                pedidoPrancha.NivelSurf();
+                while (opcao2 != 3) {
+
+                    System.out.println("Olá! Selecione a opcao que deseja:");
+                    System.out.println("1 - Venda cliente Prancha de Surf\n" +
+                            "2 - Venda cliente Vestuário\n"
+                            + "3 - Sair");
+                    opcao2 = prompt.nextInt();
+
+                    if (opcao2 == 1) {
+                        EstoqueFabrica estoqueFabrica = new EstoqueFabrica();
+                        estoqueFabrica.VendaCliente();
+                        ClientePedidoPrancha pedidoPrancha = new ClientePedidoPrancha();
+                        pedidoPrancha.NivelSurf();
+                        pedidoPrancha.CaracteristicasPrancha();
+                        System.out.println("Ok! Agora é com a nossa Fabrica!");
+                        DesbasteFabricacao desbasteFabricacao = new DesbasteFabricacao();
+                        desbasteFabricacao.PrimeiroProcesso();
+                        desbasteFabricacao.Usinagem();
+                        desbasteFabricacao.CorteDaRabeta();
+                        desbasteFabricacao.SegundoProcesso();
+                        AcabamentoFabricacao acabamentoFabricacao = new AcabamentoFabricacao();
+                        acabamentoFabricacao.Laminacao();
+                        acabamentoFabricacao.Polimento();
+                        acabamentoFabricacao.SegundoProcesso();
 
 
-                System.out.println("Bem vindo a opcao de Encomenda de pranchas de surf!");
-                System.out.println("Digite o nome do cliente:");
+                    } else if (opcao2 == 2) {
 
-                System.out.println("Digite ");
+                        EstoqueVestuario estoqueVestuario = new EstoqueVestuario();
+                        estoqueVestuario.VendaCliente();
 
-
-                }else{
-                System.out.println("Opcao Invalida, escolha novamente!\n\n");
+                    } else
+                        System.out.println("Opcao Invalida, escolha novamente!\n\n");
+                }
+                }else if (opcao1 == 3){
+                CadastroCliente cadastroCliente = new CadastroCliente();
+                cadastroCliente.Dados();
             }
         }
     }

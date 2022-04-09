@@ -11,6 +11,7 @@ public class FornecedorFabrica implements Fornecedor {
 
     Scanner prompt = new Scanner(System.in);
 
+    @Override
     public void CompraFornecedor() {
         ArrayList<String> produtosFornecedor = new ArrayList<>();
         produtosFornecedor.add("1 - Bloco");
@@ -36,6 +37,7 @@ public class FornecedorFabrica implements Fornecedor {
             EncomendaCopinho = prompt.nextInt();
         } else if (opcao == 4) {
             System.out.println("Digite a quantidade de rodos de fibra de vidro que deseja encomendar: ");
+            EncomendaRoloFibraVidro = prompt.nextInt();
         } else {
             System.out.println("opcao invalida");
         }

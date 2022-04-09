@@ -1,21 +1,33 @@
+import com.sun.xml.internal.ws.api.client.WSPortInfo;
+
 import java.util.Scanner;
 
 public class ClientePedidoPrancha extends Cliente{
 
     private int OpcaoNivelSurf = 0;
-    //private float NivelSurf;
     private float PesoSurfista;
-    private int EstiloDePrancha;
-    private int TipoRabeta;
+    private String EstiloDePrancha;
+    private String TipoRabeta;
     private String ComprimentoPrancha;
+
+    Scanner prompt = new Scanner(System.in);
 
     public ClientePedidoPrancha() {
 
     }
 
-    public float NivelSurf(){
+    public void CaracteristicasPrancha() {
+        System.out.println("Digite o Peso do Surfista:");
+        PesoSurfista = prompt.nextFloat();
+        System.out.println("Digite o Estilo de Prancha do Surfista: ");
+        EstiloDePrancha = prompt.next();
+        System.out.println("Digite o Tipo de Rabeta:");
+        TipoRabeta = prompt.next();
+        System.out.println("Digite o Comprimento da Prancha:");
+        ComprimentoPrancha = prompt.next();
+    }
 
-        Scanner prompt = new Scanner(System.in);
+    public float NivelSurf(){
 
         System.out.println("Digite o nível do Surfista");
         System.out.println("1 - Aprendiz\n2 - Iniciante\n3 - Iniciante/Intermediario\n4 - Intermediario\n" +
@@ -69,20 +81,20 @@ public class ClientePedidoPrancha extends Cliente{
         PesoSurfista = pesoSurfista;
     }
 
-    public int getEstiloDePrancha() {
+    public String getEstiloDePrancha() {
         return EstiloDePrancha;
     }
 
     public void setEstiloDePrancha(int estiloDePrancha) {
-        EstiloDePrancha = estiloDePrancha;
+        EstiloDePrancha = String.valueOf(estiloDePrancha);
     }
 
-    public int getTipoRabeta() {
+    public String getTipoRabeta() {
         return TipoRabeta;
     }
 
     public void setTipoRabeta(int tipoRabeta) {
-        TipoRabeta = tipoRabeta;
+        TipoRabeta = String.valueOf(tipoRabeta);
     }
 
     public String getComprimentoPrancha() {
@@ -92,4 +104,6 @@ public class ClientePedidoPrancha extends Cliente{
     public void setComprimentoPrancha(String comprimentoPrancha) {
         ComprimentoPrancha = comprimentoPrancha;
     }
+
+
 }

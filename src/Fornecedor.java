@@ -1,7 +1,7 @@
 interface Fornecedor {
 
 
-    public void CompraFornecedor();
+    void CompraFornecedor();
 
 
 }
